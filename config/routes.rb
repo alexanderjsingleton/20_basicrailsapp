@@ -1,4 +1,8 @@
 Bloccit::Application.routes.draw do
+  get "welcome/index"
+  get "welcome/about"
+  # alternatively, the below link may be denoted as =>  root({to: 'welcome#index'})
+    root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

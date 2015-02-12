@@ -25,7 +25,7 @@ Bloccit::Application.routes.draw do
   #       get 'short'
   #       post 'toggle'
   #     end
-  #
+  # => 
   #     collection do
   #       get 'sold'
   #     end

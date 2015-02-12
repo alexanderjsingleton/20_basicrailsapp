@@ -1,6 +1,7 @@
 Bloccit::Application.routes.draw do
   get "welcome/index"
   get "welcome/about"
+  get "welcome/contact"
   # alternatively, the below link may be denoted as =>  root({to: 'welcome#index'})
     root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

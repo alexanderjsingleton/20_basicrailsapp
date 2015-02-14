@@ -16,6 +16,10 @@ end
 # Stop the Rails server, open your Gemfile and add the bootstrap-sass gem on any line (outside of a group):
 gem 'bootstrap-sass'
 
+group :development do
+  gem "rails-erd"
+end
+
 
 
 # Use SCSS for stylesheets

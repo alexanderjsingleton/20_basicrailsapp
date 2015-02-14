@@ -16,6 +16,11 @@ end
 # Stop the Rails server, open your Gemfile and add the bootstrap-sass gem on any line (outside of a group):
 gem 'bootstrap-sass'
 
+# Rails ERD runs on all Rails 3 platforms: Ruby 1.8/1.9, Rubinius, or JRuby all work fine. Add Rails ERD as a plugin to your Ruby on Rails 3 application. In your Gemfile...
+group :development do
+  gem "rails-erd"
+end
+
 
 
 # Use SCSS for stylesheets

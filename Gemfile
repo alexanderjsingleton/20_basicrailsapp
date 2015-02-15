@@ -16,6 +16,8 @@ end
 # Stop the Rails server, open your Gemfile and add the bootstrap-sass gem on any line (outside of a group):
 gem 'bootstrap-sass'
 
+gem 'faker'
+
 
 
 # Use SCSS for stylesheets

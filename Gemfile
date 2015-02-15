@@ -16,13 +16,13 @@ end
 # Stop the Rails server, open your Gemfile and add the bootstrap-sass gem on any line (outside of a group):
 gem 'bootstrap-sass'
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 gem 'faker'
-=======
+#=======
 group :development do
   gem "rails-erd"
 end
->>>>>>> 1c1b2781ad3205dec10ec88ece1f50ea9d6fd491
+#>>>>>>> 1c1b2781ad3205dec10ec88ece1f50ea9d6fd491
 
 
 

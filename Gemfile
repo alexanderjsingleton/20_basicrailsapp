@@ -20,6 +20,8 @@ group :development do
   gem "rails-erd"
 end
 
+gem 'faker'
+
 
 
 # Use SCSS for stylesheets

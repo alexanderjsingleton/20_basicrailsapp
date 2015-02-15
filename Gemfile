@@ -24,6 +24,9 @@ group :development do
 end
 >>>>>>> 1c1b2781ad3205dec10ec88ece1f50ea9d6fd491
 
+gem 'faker'
+
+
 
 
 # Use SCSS for stylesheets

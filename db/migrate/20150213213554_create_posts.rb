@@ -7,4 +7,9 @@ class CreatePosts < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  create_table :users do |t|
+    t.belongs_to :post, index: true
+    t.string :post_id
+    t.timestamps null: false
 end

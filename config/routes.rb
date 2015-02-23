@@ -9,9 +9,13 @@ Bloccit::Application.routes.draw do
   # get "posts/show"
   # get "posts/new"
   # get "posts/edit"
-  resources :posts
+  # resources :posts
   # To have topics/new route to the right action, we need to add the route to our routes.rb file
-    resources :topics
+    # resources :topics
+
+  resources :topics do
+    resources :posts, except: [:index]
+  end
 
   # get "welcome/index"
   # get "welcome/about"

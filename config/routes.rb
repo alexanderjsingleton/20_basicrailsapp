@@ -1,10 +1,17 @@
 Bloccit::Application.routes.draw do
+  # The generator also built out get routes in the routes.rb file. Make sure to delete those, because our resources :topics declaration takes care of that.
+  # get "topics/index"
+  # get "topics/new"
+  # get "topics/show"
+  # get "topics/edit"
   devise_for :users
   # get "posts/index"
   # get "posts/show"
   # get "posts/new"
   # get "posts/edit"
   resources :posts
+  # To have topics/new route to the right action, we need to add the route to our routes.rb file
+    resources :topics
 
   # get "welcome/index"
   # get "welcome/about"

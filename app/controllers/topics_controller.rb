@@ -78,6 +78,8 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
+    # refactor
+    # @topic = Topic.new(params.require(:topic).permit(topic_para)
     authorize @topic
     if @topic.save
       redirect_to @topic, notice: "Topic was saved successfully."
@@ -89,6 +91,8 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
+    # Refactor for above
+    # @topic = Topic.new(params.require(:topic).permit(topic_param)
     authorize @topic
     if @topic.update_attributes(topic_params)
       redirect_to @topic

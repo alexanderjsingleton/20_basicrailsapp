@@ -1,4 +1,5 @@
 Bloccit::Application.routes.draw do
+  get "comments/create"
   # The generator also built out get routes in the routes.rb file. Make sure to delete those, because our resources :topics declaration takes care of that.
   # get "topics/index"
   # get "topics/new"
@@ -15,7 +16,9 @@ Bloccit::Application.routes.draw do
     # resources :topics
 
   resources :topics do
-    resources :posts, except: [:index]
+   resources :posts, except: [:index] do
+      resources :comments
+    end
   end
 
   # get "welcome/index"

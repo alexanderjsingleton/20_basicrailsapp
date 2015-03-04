@@ -49,6 +49,14 @@ posts = Post.all
   )
 end
 
+15.times do
+      comment = Comment.create(
+        user: user,
+        post: post,
+        body: Faker::Lorem.paragraph)
+      comment.update_attribute(:created_at, Time.now - rand(600..31536000))
+    end
+
 # user = User.first
 #  user.skip_reconfirmation!
 #  user.update_attributes!(

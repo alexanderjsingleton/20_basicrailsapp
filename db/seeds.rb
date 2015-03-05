@@ -43,26 +43,28 @@ posts = Post.all
 # Create Comments
 100.times do
   Comment.create!(
-     # user: users.sample,   # we have not yet associated Users with Comments
+    user: users.sample,
     post: posts.sample,
     body: Faker::Lorem.paragraph
   )
 end
 
-15.times do
-      comment = Comment.create(
-        user: user,
-        post: post,
-        body: Faker::Lorem.paragraph)
-      comment.update_attribute(:created_at, Time.now - rand(600..31536000))
-    end
+# 15.times do
+#       comment = Comment.create(
+#         user: user,
+#         post: post,
+#         body: Faker::Lorem.paragraph)
+#       comment.update_attribute(:created_at, Time.now - rand(600..31536000))
+#     end
 
-# user = User.first
-#  user.skip_reconfirmation!
-#  user.update_attributes!(
-#    email: 'alexanderjsingleton@gmail.com',
-#    password: '123456789'
-#  )
+user = User.first
+ user.skip_reconfirmation!
+ user.update_attributes!(
+   email: 'alexanderjsingleton@gmail.com',
+   password: '123456789',
+   role: 'admin'
+ )
+
 
 # Create an admin user
  admin = User.new(

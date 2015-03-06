@@ -15,11 +15,19 @@ Bloccit::Application.routes.draw do
   # To have topics/new route to the right action, we need to add the route to our routes.rb file
     # resources :topics
 
+  #  resources :topics do
+  #   resources :posts, except: [:index] do
+  #     resources :comments, only: [:create, :destroy]
+  #   end
+  # end
+
    resources :topics do
-    resources :posts, except: [:index] do
-      resources :comments, only: [:create, :destroy]
-    end
-  end
+   resources :posts, except: [:index]
+ end
+
+ resources :posts, only: [] do
+   resources :comments, only: [:create, :destroy]
+ end
 
   # get "welcome/index"
   # get "welcome/about"

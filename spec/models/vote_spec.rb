@@ -1,9 +1,16 @@
 describe Vote do
   describe "validations" do
-    describe "value validation" do
-      it "only allows -1 or 1 as values" do
-       
-      end
+  it 'is valid if the value is 1' do
+    expect(Vote.new(value: 1)).to be_valid
+  end    
+
+  it 'is valid if the value is -1' do
+    expect(Vote.new(value: -1)).to be_valid
+  end  
+
+  [-3, 0, 4].each do |invalid_value|
+    it "is not valid if the value is #{invalid_value}" do
+      expect(Vote.new(value: invalid_value)).not_to be_valid
     end
-  end
-end
+  end       
+end  

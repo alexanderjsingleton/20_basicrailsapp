@@ -2,10 +2,10 @@ class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   belongs_to :user
-    belongs_to :topic
+  belongs_to :topic
 
-  default_scope { order('created_at DESC') }
-  mount_uploader :image, ImageUploader
+  default_scope { order('rank DESC') }
+  mount_uploader :image, ImageUploader, mount_on: :image
 
   def up_votes
     # alternatively, self.votes.where(value: 1).count --> Remember votes in the above code is an implied self.votes.
@@ -24,5 +24,12 @@ class Post < ActiveRecord::Base
   validates :body, length: { minimum: 20 }, presence: true
   # validates :topic, presence: true
   # validates :user, presence: true
+
+ def update_rank
+   age_in_days = (created_at - Time.new(1970,1,1)) / (60 * 60 * 24) # 1 day in seconds
+   new_rank = points + age_in_days
+ 
+   update_attribute(:rank, new_rank)
+ end
 
 end

@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   belongs_to :topic
 
   default_scope { order('rank DESC') }
-  after_create :create_vote
+  # after_create :create_vote
   mount_uploader :image, ImageUploader, mount_on: :image
 
   def up_votes
@@ -33,7 +33,7 @@ class Post < ActiveRecord::Base
    update_attribute(:rank, new_rank)
  end
 
- private
+ # private
 
  def create_vote
   user.votes.create(value: 1, post: self)

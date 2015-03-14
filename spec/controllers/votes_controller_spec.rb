@@ -1,4 +1,4 @@
- require 'rails_helper'
+require 'rails_helper'
 require 'support/test_factories'
  
  describe VotesController do

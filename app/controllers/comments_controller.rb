@@ -1,13 +1,14 @@
 class CommentsController < ApplicationController
   def create
-    @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
+    # @topic = Topic.find(params[:topic_id])
+    @post = Post.find(params[:post_id])
+    @topic = @post.topic
     @comments = @post.comments
 
-    @comment = current_user.comments.build(params[:comment])
+    @comment = current_user.comments.build(params.require(:comment).permit(:body, :post_id))
     @comment.post = @post
 
-    authorize! :create, @comment, message: "You need be signed in to do that."
+    authorize @comment#, message: "You need be signed in to do that."
     if @comment.save
       flash[:notice] = "Comment was created."
       redirect_to [@topic, @post]

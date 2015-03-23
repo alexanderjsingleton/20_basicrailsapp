@@ -8,8 +8,10 @@
    include Devise::TestHelpers
  
    before do
-     @post = associated_post
-     @user = authenticated_user
+     # @post = associated_post
+     @post = create(:post)
+     # @user = authenticated_user
+     @post = create(:user)
      sign_in @user
    end
  

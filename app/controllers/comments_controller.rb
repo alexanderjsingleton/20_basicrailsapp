@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
 
     @comment = current_user.comments.build(params.require(:comment).permit(:body, :post_id))
     @comment.post = @post
+      @new_comment = Comment.new
 
     authorize @comment#, message: "You need be signed in to do that."
     if @comment.save
@@ -35,4 +36,11 @@ class CommentsController < ApplicationController
         format.html
         format.js
       end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:body)
+  end
+
 end

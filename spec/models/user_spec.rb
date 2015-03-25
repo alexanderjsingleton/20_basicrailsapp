@@ -11,7 +11,7 @@ require 'support/test_factories'
  
       xit "returns the appropriate favorite if it exists" do
       end
-     end
+    end
 
     describe ".top_rated" do
  
@@ -40,5 +40,4 @@ require 'support/test_factories'
       end
 
     end
-  end
  end

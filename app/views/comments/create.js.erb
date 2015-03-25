@@ -1,8 +1,8 @@
-// if the comment is valid
+
+
 <% if @comment.valid? %>
-  $('.js-comments').append("<%= escape_javascript(render(@comment)) %>");
+  $('.js-comments').prepend("<%= escape_javascript(render partial: 'comments/comment', locals: { comments: @comments}) %>");
   $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @new_comment }) %>");
 <% else %>
-// render an error on the form
   $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @comment }) %>");
 <% end %>

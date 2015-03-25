@@ -1,4 +1,4 @@
- <div class="row">
+<div class="row">
    <div class="col-md-8">
      <div class="media">
        <% if @user.avatar? %>
@@ -18,18 +18,18 @@
  </br>
  
 <div class="row">
-   <div class="tabbable tabs-left">
-     <ul class="nav nav-tabs">
-       <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
-       <li><a href="#comments" data-toggle="tab">Comments</a></li>
-     </ul>
-     <div class="tab-content">
-       <div class="tab-pane active" id="posts">
-         <%= render @posts %>
-       </div>
-       <div class="tab-pane" id="comments">
-         <%= render partial: 'comments/comments', locals: { comments: @comments } %>
-       </div>
-     </div>
-   </div>
+  <div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
+      <li><a href="#comments" data-toggle="tab">Comments</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="posts">
+        <%= render @posts %>
+      </div>
+      <div class="tab-pane" id="comments">
+        <%= render @comments %>
+      </div>
+    </div>
+  </div>
  </div>
